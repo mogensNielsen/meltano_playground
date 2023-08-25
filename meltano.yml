@@ -1,0 +1,12 @@
+version: 1
+default_environment: dev
+project_id: 3cd1107f-b3cb-411a-bd41-e824024e2118
+environments:
+- name: dev
+- name: staging
+- name: prod
+plugins:
+  extractors:
+  - name: tap-spreadsheets-anywhere
+    variant: ets
+    pip_url: git+https://github.com/ets/tap-spreadsheets-anywhere.git
