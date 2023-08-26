@@ -3,10 +3,29 @@ default_environment: dev
 project_id: 3cd1107f-b3cb-411a-bd41-e824024e2118
 environments:
 - name: dev
+  config:
+    plugins:
+      loaders:
+      - name: target-jsonl
+        config:
+          destination_path: output
+      extractors:
+      - name: tap-csv
+        config:
+          add_metadata_columns: true
+          files:
+            - entity: test_data
+              path: data/test
+              keys:
+                - ID
 - name: staging
 - name: prod
 plugins:
   extractors:
-  - name: tap-spreadsheets-anywhere
-    variant: ets
-    pip_url: git+https://github.com/ets/tap-spreadsheets-anywhere.git
+  - name: tap-csv
+    variant: meltanolabs
+    pip_url: git+https://github.com/MeltanoLabs/tap-csv.git
+  loaders:
+  - name: target-jsonl
+    variant: andyh1203
+    pip_url: target-jsonl
