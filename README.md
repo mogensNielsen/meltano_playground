@@ -20,3 +20,5 @@
 Because the directory `.meltano` is not included in the repository (included in `.gitignore`), one has to install the extractors and loaders when one clones the repository.
 
 The extractor `tap-csv` now works with both `target-jsonl` and `target-duckdb`. Use the notebook `query_duckdb.ipynb` to query the DuckDB database file that `target-duckdb` creates.
+
+The CSV files have to have `,` as a delimiter. Otherwise it doesn't work.
