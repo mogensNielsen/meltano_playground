@@ -17,3 +17,5 @@
 ## Notes
 
 Because the directory `.meltano` is not included in the repository (included in `.gitignore`), one has to install the extractors and loaders when one clones the repository.
+
+I have moved 

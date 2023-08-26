@@ -7,17 +7,8 @@ environments:
     plugins:
       loaders:
       - name: target-jsonl
-        config:
-          destination_path: output
       extractors:
       - name: tap-csv
-        config:
-          add_metadata_columns: true
-          files:
-            - entity: test_data
-              path: data/test
-              keys:
-                - ID
 - name: staging
 - name: prod
 plugins:
