@@ -7,8 +7,26 @@ environments:
     plugins:
       loaders:
       - name: target-jsonl
+        config:
+          destination_path: output
+      - name: target-duckdb
+        config:
+          path: output\warehouse.duckdb
+          dbname: warehouse
+          default_target_schema: monstermachines
       extractors:
       - name: tap-csv
+        config:
+          add_metadata_columns: true
+          files:
+            - entity: cars
+              path: data/test/cars.csv
+              keys:
+                - CAR_ID
+            - entity: colors
+              path: data/test/colors.csv
+              keys:
+                - COLOR_ID
 - name: staging
 - name: prod
 plugins:
@@ -20,3 +38,6 @@ plugins:
   - name: target-jsonl
     variant: andyh1203
     pip_url: target-jsonl
+  - name: target-duckdb
+    variant: jwills
+    pip_url: target-duckdb~=0.6
