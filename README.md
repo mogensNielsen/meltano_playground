@@ -21,4 +21,6 @@ Because the directory `.meltano` is not included in the repository (included in 
 
 The extractor `tap-csv` now works with both `target-jsonl` and `target-duckdb`. Use the notebook `query_duckdb.ipynb` to query the DuckDB database file that `target-duckdb` creates.
 
-The CSV files have to have `,` as a delimiter. Otherwise it doesn't work.
+The CSV files have to have `,` as a delimiter. Otherwise it doesn't work. This is because `tap-csv` doesn't have a configuration for delimiter.
+
+I have now implemented `tap-spreadsheets-anywhere` as it supports `;` as a delimiter. The source files now have `;` as a delimiter.

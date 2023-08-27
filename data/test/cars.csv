@@ -1,4 +1,4 @@
-CAR_ID,CAR_NAME,FK_COLOR_ID
-1,Blaze,1
-2,Pickle,2
-3,Stripes,3
+CAR_ID;CAR_NAME;FK_COLOR_ID
+1;Blaze;1
+2;Pickle;2
+3;Stripes;3

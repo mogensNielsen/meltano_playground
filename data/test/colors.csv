@@ -1,4 +1,4 @@
-COLOR_ID,COLOR_NAME
-1,Red
-2,Green
-3,Yellow
+COLOR_ID;COLOR_NAME
+1;Red
+2;Green
+3;Yellow

@@ -19,14 +19,33 @@ environments:
         config:
           add_metadata_columns: true
           files:
-            - entity: cars
-              path: data/test/cars.csv
-              keys:
-                - CAR_ID
-            - entity: colors
-              path: data/test/colors.csv
-              keys:
-                - COLOR_ID
+          - entity: cars
+            path: data/test/cars.csv
+            keys:
+            - CAR_ID
+          - entity: colors
+            path: data/test/colors.csv
+            keys:
+            - COLOR_ID
+      - name: tap-spreadsheets-anywhere
+        config:
+          tables:
+          - path: file://./data/test
+            name: cars
+            pattern: cars.csv
+            start_date: "2017-05-01T00:00:00Z"
+            format: csv
+            delimiter: ";"
+            key_properties: [car_id]
+            universal_newlines: False
+          - path: file://./data/test
+            name: colors
+            pattern: colors.csv
+            start_date: "2017-05-01T00:00:00Z"
+            format: csv
+            delimiter: ";"
+            key_properties: [color_id]
+            universal_newlines: False
 - name: staging
 - name: prod
 plugins:
@@ -34,6 +53,9 @@ plugins:
   - name: tap-csv
     variant: meltanolabs
     pip_url: git+https://github.com/MeltanoLabs/tap-csv.git
+  - name: tap-spreadsheets-anywhere
+    variant: ets
+    pip_url: git+https://github.com/ets/tap-spreadsheets-anywhere.git
   loaders:
   - name: target-jsonl
     variant: andyh1203
