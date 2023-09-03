@@ -32,3 +32,5 @@ The extractor `tap-csv` now works with both `target-jsonl` and `target-duckdb`. 
 The CSV files have to have `,` as a delimiter. Otherwise it doesn't work. This is because `tap-csv` doesn't have a configuration for delimiter.
 
 I have now implemented `tap-spreadsheets-anywhere` as it supports `;` as a delimiter. The source files now have `;` as a delimiter.
+
+`tap-rest-api-msdk` now works with the Rick and Morty API
