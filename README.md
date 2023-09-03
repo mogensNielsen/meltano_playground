@@ -15,9 +15,17 @@
     - Confirm that the data is written to as configured in `meltano.yml`
 11. Adds DuckDB target `meltano add loader target-duckdb`
 
-## Notes
+## Status
+
+The Rick and Morty data is all loaded to the default_schema. I can't get schema_mapping to work.
+
+## Remember
+
+It seems that I have to activate the dev environment before I run any commands `$env:MELTANO_ENVIRONMENT="dev"`
 
 Because the directory `.meltano` is not included in the repository (included in `.gitignore`), one has to install the extractors and loaders when one clones the repository.
+
+## Notes
 
 The extractor `tap-csv` now works with both `target-jsonl` and `target-duckdb`. Use the notebook `query_duckdb.ipynb` to query the DuckDB database file that `target-duckdb` creates.
 
