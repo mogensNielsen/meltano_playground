@@ -60,4 +60,4 @@ plugins:
     config:
       path: output\warehouse.duckdb
       add_metadata_columns: True
-      dbname: landing
+      default_target_schema: landing
