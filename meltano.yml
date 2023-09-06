@@ -60,4 +60,7 @@ plugins:
     config:
       path: output\warehouse.duckdb
       add_metadata_columns: True
-      default_target_schema: landing
+  - name: target-rick-and-morty
+    inherit_from: target-duckdb
+    config:
+      default_target_schema: landing_rick_and_morty

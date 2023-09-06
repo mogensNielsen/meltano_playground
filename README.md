@@ -17,7 +17,7 @@
 
 ## Status
 
-The Rick and Morty data is all loaded to the default_schema. I can't get schema_mapping to work.
+Should look at getting pagination to work.
 
 ## Remember
 
@@ -25,9 +25,13 @@ It seems that I have to activate the dev environment before I run any commands `
 
 Because the directory `.meltano` is not included in the repository (included in `.gitignore`), one has to install the extractors and loaders when one clones the repository.
 
+This is done with `meltano install`
+
 ## Notes
 
-The extractor `tap-csv` now works with both `target-jsonl` and `target-duckdb`. Use the notebook `query_duckdb.ipynb` to query the DuckDB database file that `target-duckdb` creates.
+I couldn't get target-duck.schema_mapping to work, so I configured a target `target-rick-and-morty` that has a default target schema 'landing_rick_and_morty'
+
+The extractor `tap-spreadsheets-anywhere` now works with both `target-jsonl` and `target-duckdb`. Use the notebook `query_duckdb.ipynb` to query the DuckDB database file that `target-duckdb` creates.
 
 The CSV files have to have `,` as a delimiter. Otherwise it doesn't work. This is because `tap-csv` doesn't have a configuration for delimiter.
 
