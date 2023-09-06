@@ -11,9 +11,9 @@
 7. Add extractor for csv files `meltano add extractor tap-spreadsheets-anywhere`
 8. Add loader for jsonl `meltano add loader target-jsonl`
 9. Configures extractor and loader in `meltano.yml`
-10. Test by running `meltano run tap-csv target-jsonl`
-    - Confirm that the data is written to as configured in `meltano.yml`
-11. Adds DuckDB target `meltano add loader target-duckdb`
+10. Test by running `meltano run tap-spreadsheets-anywhere target-jsonl`
+    - Confirm that the data is written to `output/` as configured in `meltano.yml`
+11. Add DuckDB target `meltano add loader target-duckdb`
 
 ## Status
 
@@ -29,12 +29,12 @@ This is done with `meltano install`
 
 ## Notes
 
+### DuckDB schema mapping
+
 I couldn't get target-duck.schema_mapping to work, so I configured a target `target-rick-and-morty` that has a default target schema 'landing_rick_and_morty'
 
-The extractor `tap-spreadsheets-anywhere` now works with both `target-jsonl` and `target-duckdb`. Use the notebook `query_duckdb.ipynb` to query the DuckDB database file that `target-duckdb` creates.
+### Delimiters in CSV files
 
 The CSV files have to have `,` as a delimiter. Otherwise it doesn't work. This is because `tap-csv` doesn't have a configuration for delimiter.
 
 I have now implemented `tap-spreadsheets-anywhere` as it supports `;` as a delimiter. The source files now have `;` as a delimiter.
-
-`tap-rest-api-msdk` now works with the Rick and Morty API
