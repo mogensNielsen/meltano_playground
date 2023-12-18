@@ -43,4 +43,6 @@ I have now implemented `tap-spreadsheets-anywhere` as it supports `;` as a delim
 `meltano --log-level=debug run [...]`
 
 ### Environment variables
-Add a file at project root called `.env`. In this file I can add environment variables like `TARGET_DUCKDB_PATH='[path]'`. Need to check which config has priority; the `.env` file or config in `meltano.yml`
+Add a file at project root called `.env`. In this file I can add environment variables like `TARGET_DUCKDB_PATH='[path]'`. *Need to check which config has priority; the `.env` file or config in `meltano.yml`*
+
+Meltano will automatically check `.env` for environment variables.
