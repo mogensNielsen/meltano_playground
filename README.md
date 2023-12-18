@@ -38,3 +38,6 @@ I couldn't get target-duck.schema_mapping to work, so I configured a target `tar
 The CSV files have to have `,` as a delimiter. Otherwise it doesn't work. This is because `tap-csv` doesn't have a configuration for delimiter.
 
 I have now implemented `tap-spreadsheets-anywhere` as it supports `;` as a delimiter. The source files now have `;` as a delimiter.
+
+### Log level flag
+`meltano --log-level=debug run [...]`
